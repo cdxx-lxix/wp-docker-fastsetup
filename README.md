@@ -14,10 +14,10 @@ Some text editor eg. Nano
 ###### Start the containers
 
 undetached mode
-``` sudo docker-compose up ```
+``` sudo docker compose up ```
 
 detached mode
-``` sudo docker-compose up -d ```
+``` sudo docker compose up -d ```
 
 ### Configurations
 
