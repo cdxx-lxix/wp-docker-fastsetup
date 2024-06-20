@@ -38,7 +38,13 @@ services:
       WORDPRESS_DB_PASSWORD: '${MYSQL_PASSWORD}'
     volumes:
       - ./:/var/www/html # Exposes whole wp installation into the same folder as this repo
-      - ./config/wordpress.ini:/usr/local/etc/php/conf.d/wordpress.ini # Change some php setting for better life (if you can call this a life if you use wordpress)
+      # Change some php setting for better life (if you can call this a life if you use wordpress)
+      - ./config/docker-php-file-uploads.ini:/usr/local/etc/php/conf.d/docker-php-file-uploads.ini
+      - ./config/docker-php-upload-max-filesize.ini:/usr/local/etc/php/conf.d/docker-php-upload-max-filesize.ini
+      - ./config/docker-php-post-max-size.ini:/usr/local/etc/php/conf.d/docker-php-post-max-size.ini
+      - ./config/docker-php-memory-limit.ini:/usr/local/etc/php/conf.d/docker-php-memory-limit.ini
+      - ./config/docker-php-max-input-time.ini:/usr/local/etc/php/conf.d/docker-php-max-input-time.ini
+      - ./config/docker-php-max-execution-time.ini:/usr/local/etc/php/conf.d/docker-php-max-execution-time.ini
     networks:
       - wordpress-network
 
